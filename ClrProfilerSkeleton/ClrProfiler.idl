@@ -1,0 +1,42 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "corprof.idl";
+
+//Class factory interface used to create our profiler
+[
+	object,
+	uuid(836B7AD4-4C6F-4587-99AA-4CB2A4F045B6),
+	helpstring("IClrProfiler Interface"),
+	pointer_default(unique)
+]
+interface IClrProfilerClassFactory : IClassFactory{
+};
+[
+	object,
+	uuid(37DB3D2B-0571-41d2-8CF4-E7B4D3AEE601),
+	helpstring("IClrProfiler Interface"),
+	pointer_default(unique)
+]
+
+//Interface used to implement the CLR Profiling interface ICorProfilerCallback
+interface IClrProfiler : ICorProfilerCallback2{
+};
+[
+	uuid(0A9A94BD-83CB-4023-9456-0AC7A7F01A77),
+	version(1.0),
+	helpstring("CLR Profiler 1.0 Type Library")
+]
+
+//Library definition
+library ClrProfiler
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(324ADC20-F1DA-411c-AE5C-449C3CDC3BCA),
+		helpstring("CLR Profiler Class")
+	]
+	coclass ClrProfiler
+	{
+		[default] interface IUnknown;
+	};
+};

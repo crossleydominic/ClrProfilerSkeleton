@@ -1,0 +1,1 @@
+Simple implemenation of ICorProfiler interface for hooking into the CLR profiler
